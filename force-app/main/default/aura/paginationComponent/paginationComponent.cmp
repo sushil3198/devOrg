@@ -1,0 +1,40 @@
+<aura:component controller="pageController" implements="flexipage:availableForAllPageTypes">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:attribute name="Accounts" type="Account[]"/>
+    <aura:attribute name="page" type="integer" description="using for store page Number"/>
+    <aura:attribute name="pages" type="integer" description="using for store All Pages page Number"/>
+    <aura:attribute name="total" type="integer" description="total records count store "/>
+    
+    <lightning:card>
+    <div class="slds-m-around_small">
+        <div class="slds-page-header" role="banner">
+           <ui:inputSelect aura:id="recordSize" label="Display Record Per Page: " change="{!c.onSelectChange}">
+                <ui:inputSelectOption text="1" label="1" value="true"/>
+                <ui:inputSelectOption text="15" label="15"/>
+                <ui:inputSelectOption text="20" label="20"/>
+            </ui:inputSelect> 
+        </div>    		
+            		<div class="slds-grid slds-gutters slds-m-around_small">
+                        <div class="slds-truncate slds-col " title="Name"><span class="slds-border_bottom">Account Name</span></div> 
+                        <div class="slds-truncate slds-col " title="Website"><span class="slds-border_bottom">Website</span></div>
+                        <div class="slds-truncate slds-col " title="Phone"><span class="slds-border_bottom">Phone</span></div>
+                    </div>
+        
+        		
+                    <aura:iteration items="{!v.Accounts}" var="account"> 
+                        <div class="slds-grid slds-gutters slds-m-around_small">
+                            <div class=" slds-col" title="{!account.Name}">{!account.Name}</div>
+                            <div class=" slds-col " title="{!account.Website}"><a>{!account.Website}</a></div>
+                            <div class="slds-col " title="{!account.Phone}">{!account.Phone}</div>
+                        </div>
+                    </aura:iteration>
+        		
+        
+        <div class="slds-align_absolute-center slds-m-around_small">            
+                <lightning:button iconName="utility:chevronleft" disabled="{!v.page == 1}" variant="brand-outline" label="Previous Page" onclick="{! c.navigate }" />            
+                <lightning:button iconName="utility:chevronright" disabled="{!v.page == v.pages}" aura:id="previousPage" variant="brand-outline" label="Next Page" onclick="{! c.navigate }" />
+            </div>
+    </div>
+    </lightning:card>    
+</aura:component>

@@ -1,0 +1,33 @@
+<template>
+    <lightning-card>
+        <lightning-layout>
+            <lightning-layout-item size="4" padding="around-small">
+                <lightning-combobox options={optionsList}
+                                    value={value}
+                                    label="Select a Profile"
+                                    onchange={pickOneHandler}
+                ></lightning-combobox>
+            </lightning-layout-item>
+            <template if:true={showPick2}>
+                <lightning-layout-item size="3" padding="around-small">
+                    <lightning-combobox value={combo2Val}
+                                        options={pick2Options}
+                                        label="Select a sObject"
+                                        onchange={pick2Handler}
+                    ></lightning-combobox>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+        <template if:true={hasFLS}>
+            <lightning-layout>
+                <lightning-layout-item padding="around-small">
+                    <lightning-datatable key-field="Id"
+                                         columns={cols}
+                                         hide-checkbox-column="true"
+                                         data={flsData}               
+                    ></lightning-datatable>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+    </lightning-card>
+</template>

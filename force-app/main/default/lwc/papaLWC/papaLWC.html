@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Parent Component">
+        <lightning-layout>
+            <lightning-layout-item size="12" padding="around-medium">
+                <c-beta-L-W-C onchildevent={parentFruits}></c-beta-L-W-C>
+                <lightning-formatted-text value={fruitObj}></lightning-formatted-text>
+                <ul>
+                    <template for:each={fruitObj} for:item="fruit">
+                        <p key={fruit.id}>{fruit.value}</p>
+                    </template>
+                </ul>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

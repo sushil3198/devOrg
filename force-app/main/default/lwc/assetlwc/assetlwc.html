@@ -1,0 +1,101 @@
+<template>
+    <lightning-card title="Global Asset">
+        <lightning-layout>
+            <lightning-layout-item size="4" padding="around-medium">
+                <lightning-combobox options={optionsList}
+                                    label="Select a Value"
+                                    value={comboval}
+                                    onchange={firstComboHandler}
+                ></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="4" padding="around-medium">
+                <lightning-combobox options={options2List}
+                                    label="Select a Profile"
+                                    value={combo2val}
+                                    onchange={secondComboHandler}
+                ></lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="4" padding="around-medium">
+                <lightning-combobox value={combo3val}
+                                    options={options3List}
+                                    label="Select a value"
+                                    onchange={thirdComboHandler}
+                ></lightning-combobox>
+            </lightning-layout-item>
+        </lightning-layout>
+        <template if:true={showData}>
+            <!-- **********Apex Class Data************** -->
+            <template if:true={apexData}>
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small">
+                        <template for:each={apexClassList} for:item="item">
+                            <p key={item.Id}>
+                                <lightning-formatted-text value={item.Name}></lightning-formatted-text>
+                            </p>
+                        </template>
+                        <template if:true={displayError}>
+                            <p>
+                                <lightning-formatted-text value="Sorry! This profile has no Apex Class Permision Enabled"></lightning-formatted-text>
+                            </p>
+                        </template>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </template>
+            <!-- ***** sObject Data***** -->
+            <template if:true={objectData}>
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small">
+                        <lightning-datatable key-field="Id"
+                                             data={data}
+                                             hide-checkbox-column=true
+                                             columns={columnNames}>
+                        </lightning-datatable>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </template>
+        </template>
+        <!-- ********* Permission Set Data ******* -->
+        <template if:true={permissionSetError}>
+            <lightning-layout>
+                <lightning-layout-item padding="around-small">
+                    <p>
+                        <lightning-formatted-text value={permissionSetMsg}></lightning-formatted-text>
+                    </p>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+
+
+        <!-- ************Custom Permission Data*************** -->
+        <template if:true={customPermissionData}>
+            <lightning-layout>
+                <lightning-layout-item padding="around-small">
+                    <template for:each={customPermissionList} for:item="item">
+                        <p key={item.Id}>
+                            <lightning-formatted-text value={item.DeveloperName}></lightning-formatted-text>
+                        </p>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+        <template if:true={customPermissionError}>
+            <lightning-layout>
+                <lightning-layout-item padding="around-small">
+                    <p>
+                        <lightning-formatted-text value={customDataMsg}></lightning-formatted-text>
+                    </p>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+        <template if:true={isProfile}>
+            <lightning-layout>
+                <lightning-layout-item>
+                    <p class="slds-m-left_medium">
+                        <a onclick={navigationHandler}>sObject FLS?</a>
+                    </p>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+        
+    </lightning-card>
+</template>

@@ -1,0 +1,31 @@
+<template>
+    <template if:true={isBusy}>
+        <div>
+            <lightning-spinner variant="brand" size="medium"></lightning-spinner>
+        </div>
+    </template>
+    <lightning-card title="Dependent Picklist">
+        <lightning-layout>
+            <lightning-layout-item size="3" padding="around-medium">
+                <lightning-combobox label="Picklist 1"
+                                    value={pickValue}
+                                    options={pickOptions}
+                                    onchange={pickValueHandler}
+                                    >
+                </lightning-combobox>
+                <lightning-combobox label="Picklist 2"
+                                    value={pick2Value}
+                                    options={pick2Options}
+                                    onchange={pick2ValueHandler}
+                                    >
+                </lightning-combobox>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item size="4" padding="around-medium">
+                <lightning-input label="Food Preference" onchange={inputBoxHandler}></lightning-input>
+                <lightning-formatted-text value={foodPreference}></lightning-formatted-text>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

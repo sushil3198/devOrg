@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Wire Service" icon-name="">
+        <lightning-layout>
+            <lightning-layout-item size="12" padding="around-medium">
+                <lightning-button label="Get Accounts" variant="brand" onclick={onClickHandler}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item size="8" padding="around-medium">
+                <lightning-datatable    key-field="id"
+                                        data={}
+                                        columns={rows}
+                                     ></lightning-datatable>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

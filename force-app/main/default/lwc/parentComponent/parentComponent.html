@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        <lightning-layout>
+            <lightning-layout-item padding="around-medium">
+                <lightning-input label="Enter a value" onchange={valueHandler}></lightning-input>
+                <lightning-button label="Select Checkbox" onclick={checkboxSelectHandler}></lightning-button>
+                <c-child-component></c-child-component>
+                <lightning-formatted-text value={msg}></lightning-formatted-text>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

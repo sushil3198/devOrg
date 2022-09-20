@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>sf_devops__Promote_Review_Versioned</fullName>
+    <active>true</active>
+    <description>The promote Review can only be set on prerelease/versioned stage</description>
+    <errorConditionFormula>AND(
+ OR (
+ ISCHANGED( sf_devops__Promote_Review_Remote_Reference__c ) ,
+ ISCHANGED(   sf_devops__Versioned__c   ),
+ ISCHANGED(   sf_devops__Prerelease__c   )
+  ),
+  NOT(OR(sf_devops__Versioned__c,sf_devops__Prerelease__c)),
+  NOT(ISBLANK(sf_devops__Promote_Review_Remote_Reference__c))
+)</errorConditionFormula>
+    <errorDisplayField>sf_devops__Promote_Review_Remote_Reference__c</errorDisplayField>
+    <errorMessage>You can only set the Promote Review on a versioned or prerelease pipeline stage.</errorMessage>
+</ValidationRule>

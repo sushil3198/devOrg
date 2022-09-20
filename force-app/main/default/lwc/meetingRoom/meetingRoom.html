@@ -1,0 +1,11 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-tile label={meetingRoomInfo.roomName}>
+                <p class="slds-truncate" title={meetingRoomInfo.roomCapacity}>Room Capacity : {meetingRoomInfo.roomCapacity}</p>
+                <slot name="addtionalMarkup"></slot>
+                <slot></slot>
+            </lightning-tile>
+        </div>
+    </lightning-card>
+</template>

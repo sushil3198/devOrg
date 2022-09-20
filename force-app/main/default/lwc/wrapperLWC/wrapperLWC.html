@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Wrapper Demo">
+        <lightning-layout>
+            <lightning-layout-item padding="around-medium">
+                <lightning-input label="Account Name" placeholder="Enter account Name" onchange={inputHandler}></lightning-input>
+                <p class="slds-p-top_small">
+                    <lightning-button label="Search" onclick={searchHandler}
+                        variant="brand"></lightning-button>
+                </p>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout>
+            <lightning-layout-item size="12" padding="around-medium">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered"
+                    aria-label="Example table of Opportunities with vertical borders">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="recordId">S.No</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Opportunity Name">Contacts and Opportunities</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={dataTableValues} for:item="m">
+                            <tr key={m.id}>
+                                <td>{m.id}</td>
+                                <td>{m.Name}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

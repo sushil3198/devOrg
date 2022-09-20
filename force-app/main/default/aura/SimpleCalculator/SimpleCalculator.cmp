@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+
+    <aura:attribute name="firstNumber" type="decimal"/>
+    <aura:attribute name="secondNumber" type="decimal"/>
+    <aura:attribute name="result" type="decimal"/>
+    
+    <lightning:card>
+        <lightning:input label="First Number" value="{!v.firstNumber}" />
+        <lightning:input label="Second Number" value="{!v.secondNumber}" />
+        <lightning:input label="Result" value="{!v.result}" />
+        <div>{!v.result}</div>
+        <!-- <lightning:outputField fieldName="CloseDate" /> -->
+        <lightning:button variant="brand" label="Sum" onclick="{!c.addition}"></lightning:button>
+    </lightning:card>
+</aura:component>

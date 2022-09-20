@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ownership</fullName>
+    <active>false</active>
+    <errorConditionFormula>OR(
+ISPICKVAL(Ownership, &apos;Public&apos;),
+ISPICKVAL(Ownership, &apos;Private&apos;),
+ISPICKVAL(Ownership, &apos;&apos;)
+)</errorConditionFormula>
+    <errorMessage>Ownership cannot be blank and should be other than Private and Public</errorMessage>
+</ValidationRule>

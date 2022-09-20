@@ -1,0 +1,6 @@
+<apex:page >
+    <apex:pageblock >
+        <apex:pageBlockSection >Hello World</apex:pageBlockSection>
+    </apex:pageblock>
+    
+</apex:page>

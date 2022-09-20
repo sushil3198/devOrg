@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Parent Component">
+        <lightning-layout>
+            <lightning-layout-item size="9" padding="around-medium">
+                <c-child-L-M-S onrowselect={handleEvt}></c-child-L-M-S>
+            </lightning-layout-item>
+            <lightning-layout-item size="3" padding="around-medium">
+                <div>
+                    {names}
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

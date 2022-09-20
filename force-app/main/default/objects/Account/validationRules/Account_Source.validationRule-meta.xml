@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Source</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT(
+OR(
+ISPICKVAL( AccountSource, &apos;Web&apos;),
+ISPICKVAL( AccountSource, &apos;Phone Inquiry&apos;),
+ISPICKVAL( AccountSource, &apos;Partner Referral&apos;)
+)
+)</errorConditionFormula>
+    <errorMessage>Please select any one of the following, WEB, Phone Inquiry, or Partner Referral.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,74 @@
+<apex:page >
+    
+    
+<head>
+<!-- Google tag (gtag.js) -->
+<script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-X07FPXZRD3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+    gtag('config', 'G-S81HCWZJJK'); //G-X07FPXZRD3 
+</script>
+    <!--Script added-->
+<script type="text/javascript">
+    document.getElementById('FORM_ID').addEventListener(
+    'submit', function(event) {
+      ga(function() { 
+        var tracker = ga.getAll()[0];
+        var clientId = tracker.get('clientId');
+        document.getElementById('GACLIENTID').value = clientId;
+        var userId = tracker.get('userId'); 
+        document.getElementById('GAUSERID').value = userId; 
+      });
+    });
+</script>
+    
+  
+</head>
+<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+<body>
+ <!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/>
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
+
+
+
+    <input type="hidden" name="oid" value="00D5g000004xjzA"/>
+    <input type="hidden" name="retURL" value="https://sushilsharma-developer-edition.ap24.force.com/GA/apex/leadsubmitform"/>
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail"                                  -->
+<!--  value="sushilsharma3jan1998@gmail.com">                                 -->
+<!--  ----------------------------------------------------------------------  -->
+
+<label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br/>
+
+<label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br/>
+
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br/>
+
+<label for="city">City</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br/>
+
+GACLIENTID:<input  id="00N5g00000TUkUu" maxlength="255" name="00N5g00000TUkUu" value="" size="20" type="text" /><br/>
+
+GATRACKID:<input  id="00N5g00000TUkZC" maxlength="255" name="00N5g00000TUkZC" value="UA-60390233-3" size="20" type="text" /><br/>
+
+    <input type="submit" name="submit"/>
+
+</body>
+
+</form>
+</apex:page>

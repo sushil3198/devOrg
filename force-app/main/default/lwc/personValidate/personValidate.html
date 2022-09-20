@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Create a person" icon-name="action:new_contact">
+        <lightning-layout>
+            <lightning-layout-item>
+                
+                <div class="slds-m-left_small">
+                    <lightning-input name="Person First Name" label="First Name" onchange={firstNameHandler}></lightning-input>
+                    <lightning-input name="Person Last Name" label="Last Name" onchange={lastNameHandler}></lightning-input>
+                    <lightning-input class="phoneNumber" name="Phone Number" label="Phone Number" onchange={phoneNumberHandler}></lightning-input>
+                    <lightning-input class="email" name="Email address" label="Email" onchange={emailHandler}></lightning-input>                    
+                </div>
+                
+                <div class="slds-m-top_small slds-m-left_small"> 
+                    <lightning-button label="Save Record" variant="brand" onclick={createPerson}></lightning-button> 
+                    <!-- <lightning-button label="Hit Me" variant="brand" onclick={hit}></lightning-button> -->
+                </div>
+
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

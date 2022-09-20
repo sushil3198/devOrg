@@ -1,0 +1,25 @@
+<aura:component controller="GetRecordClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="recordId" type="Account" />
+<aura:attribute name="count" type="Integer" />
+<aura:attribute name="isNext" type="Boolean" />
+<aura:attribute name="isPrev" type="Boolean" />    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <div class="container">
+        <div>
+        <p class="title">Message Center</p>
+        <lightning:card title="Secure Inbox">
+            <lightning:recordForm
+                recordId="{!v.recordId.Id}"
+                objectApiName="Account"
+                layoutType="Compact"
+                columns="3"
+                mode="readonly" />
+        </lightning:card>
+        </div>
+        <div class="button-container">
+            <lightning:button class="button-left" variant="brand-outline" label="Delete Message" title="Brand action"/>
+            <lightning:button iconName = "utility:back" disabled="{!v.isPrev}" onclick="{!c.handlePrevious}" class="button-right" variant="brand-outline" label="Previous" title="Brand action"/>
+            <lightning:button iconName = "utility:forward" disabled="{!v.Next}" onclick="{!c.handleNext}" class="button-right" variant="brand-outline" label="Next" title="Brand action"/>
+        </div>
+    </div>
+</aura:component>

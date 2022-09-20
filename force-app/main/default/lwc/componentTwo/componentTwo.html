@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Child Component">
+        <lightning-layout>
+            <lightning-layout-item  padding="around-small">
+                <lightning-button label="fetch" variant="brand" onclick={clickHandler}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-medium">
+                <lightning-datatable data={accounts}
+                                     columns={cols}
+                                     key-field="id"
+                                     onrowselection={rowHandler}
+                                    >
+                </lightning-datatable>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

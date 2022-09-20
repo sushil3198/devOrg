@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Count_Max_50</fullName>
+    <active>false</active>
+    <description>Check for Count__c value, Max 50.</description>
+    <errorConditionFormula>Count__c &gt; 50</errorConditionFormula>
+    <errorMessage>Value of Count cannot be more than 50.</errorMessage>
+</ValidationRule>
